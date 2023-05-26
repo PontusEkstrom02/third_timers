@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 
-export default function BooksTable() {
+export default function BooksTable({ search }) {
   const [booksList, setBooksList] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/library/books')
+    fetch(`http://localhost:3001/library/books/search?q=${search}`)
       .then(response => response.json())
       .then(data => {
-        setBooksList(data.books);
+        setBooksList(data);
       })
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, [search]);
 
   return (
     <table>

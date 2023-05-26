@@ -1,11 +1,18 @@
-//This file should show the guest the books and its info with a search bar and a sign in button.
-import SearchBar from "../components/searchBar"
-import BooksTable from "../components/booksTable"
-export default function adminUserPage() {
-    return(
-        <div>
-            <SearchBar placeholder="Search query..."/>
-            <BooksTable />
-        </div>
-    )
+import React, { useState } from 'react';
+import SearchBar from '../components/searchBar';
+import BooksTable from '../components/booksTable';
+
+export default function GuestPage() {
+  const [search, setSearch] = useState('');
+
+  return (
+    <div>
+      <SearchBar
+        placeholder="Search query..."
+        onChange={event => setSearch(event.target.value)}
+      />
+      <BooksTable search={search} />
+    </div>
+  );
 }
+
