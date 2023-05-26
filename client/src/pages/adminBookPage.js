@@ -1,4 +1,5 @@
 import React from "react";
+import BooksTable from "../components/booksTable";
 function AdminBookPage() {
   const handleAddbtn = (event) => {
     event.preventDefault();
@@ -8,7 +9,7 @@ function AdminBookPage() {
     <div className="adminBookPage-container">
       <input
         type="text"
-        placeholder="Search query..."
+        placeholder="Search for a book"
         name="searchInput"
         autoComplete="off"
       ></input>
@@ -16,30 +17,7 @@ function AdminBookPage() {
         Add new book
       </button>
       <table>
-        <thead>
-          <tr>
-            <th>Books title</th>
-            <th>Book author</th>
-            <th>Availability</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Lorem Ipsum</td>
-            <td>Lorem Ipsum</td>
-            <td>2 left</td>
-          </tr>
-          <tr>
-            <td>Lorem Ipsum</td>
-            <td>Lorem Ipsum</td>
-            <td>2 left</td>
-          </tr>
-          <tr>
-            <td>Lorem Ipsum</td>
-            <td>Lorem Ipsum</td>
-            <td>2 left</td>
-          </tr>
-        </tbody>
+        <BooksTable />
       </table>
     </div>
   );
