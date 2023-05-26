@@ -1,4 +1,4 @@
-import AdminUserPage from "./pages/adminUserPage.js";
+import GuestPage from "./pages/guestPage.js";
 import "./App.css";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
         <h1>Booksters website</h1>
       </header>
 
-      <AdminUserPage />
+      <GuestPage />
     </>
   );
 }
