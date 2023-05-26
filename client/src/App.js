@@ -1,6 +1,6 @@
-import AdminBookPage from "./pages/adminBookPage.js";
 // import OrderField from "./components/orderField.js";
 import "./App.css";
+import GuestPage from "./pages/guestPage.js";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <h1>Booksters website</h1>
       </header>
 
-      <AdminBookPage />
+      <GuestPage />
     </>
   );
 }
