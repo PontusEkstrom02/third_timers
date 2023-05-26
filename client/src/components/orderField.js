@@ -1,1 +1,38 @@
-//A field for the user/admin to add and subtract how many books they would like to order and the order button to order the set amount.
+import React, { useState } from "react";
+
+function OrderField() {
+  const [order, setOrder] = useState(0);
+
+  const incrementOrder = () => {
+    setOrder(order + 1);
+  };
+
+  const decrementOrder = () => {
+    setOrder(order - 1);
+  };
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className="order-section">
+            <button className="incrementBook" onClick={incrementOrder}>
+              +
+            </button>
+            <p>{order}</p>
+            <button className="decrementBook" onClick={decrementOrder}>
+              -
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
+
+export default OrderField;

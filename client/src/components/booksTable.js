@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function BooksTable({ search }) {
   const [booksList, setBooksList] = useState([]);
@@ -9,7 +9,7 @@ export default function BooksTable({ search }) {
       .then(data => {
         setBooksList(data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
       });
   }, [search]);
@@ -24,15 +24,14 @@ export default function BooksTable({ search }) {
         </tr>
       </thead>
       <tbody>
-        {booksList.map(book => (
+        {booksList.map((book) => (
           <tr key={book.id}>
             <td>{book.title}</td>
             <td>{book.author}</td>
-            <td>{book.quantity}</td>
+            <td>{book.quantity > 0 ? book.quantity : "Out of stock"}</td>
           </tr>
         ))}
       </tbody>
     </table>
   );
 }
-
