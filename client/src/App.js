@@ -1,4 +1,5 @@
 import AdminBookPage from "./pages/adminBookPage.js";
+import OrderField from "./components/orderField.js";
 import "./App.css";
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
         <h1>Booksters website</h1>
       </header>
 
-      <AdminBookPage />
+      <OrderField />
     </>
   );
 }
