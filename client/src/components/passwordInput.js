@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from 'react';
 
-function passwordInput() {
-  return <input></input>;
-}
+const PasswordInput = ({ onPasswordChange }) => {
+  const [password, setPassword] = useState('');
 
-export default passwordInput;
+  const handlePasswordChange = (event) => {
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+    onPasswordChange(newPassword);
+  };
+
+  return (
+    <div>
+      <label>
+        Password:
+        <input
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+          placeholder="Type your password..."
+        />
+      </label>
+    </div>
+  );
+};
+
+export default PasswordInput;

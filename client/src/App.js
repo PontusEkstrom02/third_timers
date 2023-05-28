@@ -1,8 +1,9 @@
 // import OrderField from "./components/orderField.js";
 import "./App.css";
-import GuestPage from "./pages/guestPage.js";
+//import GuestPage from "./pages/guestPage.js";
+import LoginPage from "./pages/loginPage.js";
 
-function App() {
+/*function App() {
   return (
     <>
       <header>
@@ -11,6 +12,21 @@ function App() {
 
       <GuestPage />
     </>
+  );
+}
+
+export default App;
+*/
+function App() {
+  return (
+    <>
+      <header>
+        <h1>Booksters website</h1>
+      </header>
+    
+      <LoginPage />
+    </>
+
   );
 }
 
