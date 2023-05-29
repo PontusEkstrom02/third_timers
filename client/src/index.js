@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import App from './App';
-
+import Layout from "./components/layout";
+import LoginPage from "./pages/loginPage"
+import GuestPage from './pages/guestPage';
+import RegisterPage from './pages/registerPage';
+import UserPage from "./pages/userPage"
+import AdminBookPage from "./pages/adminBookPage"
+import AdminUserPage from "./pages/adminUserPage"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<LoginPage />} />
+          <Route path="GuestPage" element={<GuestPage />} />
+          <Route path="RegisterPage" element={<RegisterPage />} />
+          <Route path="UserPage" element={<UserPage />} />
+          <Route path="AdminBookPage" element={<AdminBookPage />} />
+          <Route path="AdminUserPage" element={<AdminUserPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

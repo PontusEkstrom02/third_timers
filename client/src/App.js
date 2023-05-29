@@ -1,7 +1,5 @@
-// import OrderField from "./components/orderField.js";
 import "./App.css";
-//import GuestPage from "./pages/guestPage.js";
-import LoginPage from "./pages/loginPage.js";
+import GuestPage from "./pages/guestPage.js";
 
 function App() {
   return (
@@ -10,7 +8,7 @@ function App() {
         <h1>Booksters website</h1>
       </header>
     
-      <LoginPage />
+      <GuestPage />
     </>
 
   );
