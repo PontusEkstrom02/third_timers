@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useState } from 'react';
 import BooksTable from "../components/booksTable";
+import SearchBar from "../components/searchBar";
 function AdminBookPage() {
+  const [search, setSearch] = useState('');
   const handleAddbtn = (event) => {
     event.preventDefault();
   };
 
   return (
     <div className="adminBookPage-container">
-      <input
-        type="text"
-        placeholder="Search for a book"
-        name="searchInput"
-        autoComplete="off"
-      ></input>
+      <SearchBar
+        placeholder="Search query..."
+        onChange={event => setSearch(event.target.value)}
+      />
       <button type="submit" onClick={handleAddbtn}>
         Add new book
       </button>
       <table>
-        <BooksTable />
+        <BooksTable search={search}/>
       </table>
     </div>
   );
