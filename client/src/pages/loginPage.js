@@ -1,9 +1,9 @@
 //This file will render a login view with two input fields for username and password, and two buttons for login and guest user view.
 import React, { useState } from 'react';
-import LoginBtn from '../components/LoginBtn';
-import GuestBtn from '../components/GuestUserBtn';
-import UsernameInput from '../components/UsernameInput';
-import PasswordInput from '../components/PasswordInput';
+import LoginBtn from '../components/loginBtn';
+import GuestBtn from '../components/guestUserBtn';
+import UsernameInput from '../components/usernameInput';
+import PasswordInput from '../components/passwordInput';
 
 function LoginPage() {
     const [username, setUsername] = useState('');
