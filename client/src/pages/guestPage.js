@@ -11,7 +11,7 @@ export default function GuestPage() {
         placeholder="Search query..."
         onChange={event => setSearch(event.target.value)}
       />
-      <BooksTable search={search} />
+      <BooksTable search={search} role="guest"/>
     </div>
   );
 }
