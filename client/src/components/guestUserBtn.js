@@ -1,11 +1,10 @@
 //A button to log in as a guest
-import React from "react";
-
-const GuestBtn = ({ onClick, children }) => {
+import { Link } from "react-router-dom";
+const GuestBtn = () => {
   return (
-    <button onClick={onClick}>
-      {children}
-    </button>
+    <>
+     <small>No account? Sign up <Link to="RegisterPage">here!</Link></small>
+    </>
   );
 };
 

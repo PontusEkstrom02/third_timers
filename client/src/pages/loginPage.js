@@ -35,7 +35,7 @@ function LoginPage() {
             <PasswordInput onPasswordChange={handlePasswordChange} />
             </div>
             <LoginBtn onClick={LoginBtn}>Sign in</LoginBtn>
-            <GuestBtn  onClick={GuestBtn}>Proceed as guest user</GuestBtn>
+            <GuestBtn />
           </form>
         </div>
       );
