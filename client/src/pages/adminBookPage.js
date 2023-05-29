@@ -17,7 +17,7 @@ function AdminBookPage() {
         Add new book
       </button>
       <table>
-        <BooksTable search={search}/>
+        <BooksTable search={search} role="admin"/>
       </table>
     </div>
   );
