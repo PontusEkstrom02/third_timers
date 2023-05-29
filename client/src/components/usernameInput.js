@@ -11,15 +11,14 @@ const UsernameInput = ({ onUsernameChange }) => {
 
   return (
     <div>
-      <label>
-        Username:
+      <label>Username
         <input
           type="username"
           value={username}
           onChange={handleUsernameChange}
           placeholder="Type your username..."
         />
-      </label>
+        </label>
     </div>
   );
 };

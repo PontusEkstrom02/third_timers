@@ -3,7 +3,7 @@ import React from "react";
 function registerBtn() {
   return (
     <button type="submit" name="register">
-      Register
+      Register new account
     </button>
   );
 }

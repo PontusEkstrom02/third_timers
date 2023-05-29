@@ -2,7 +2,7 @@
 export default function SearchBar({ placeholder, onChange }) {
     
     return (
-      <input type="text" placeholder={placeholder} onChange={onChange} />
+      <input type="text" data-testid="search-input" placeholder={placeholder} onChange={onChange} />
     );
   }
   

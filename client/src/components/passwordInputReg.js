@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const PasswordInput = ({ onPasswordChange }) => {
+const PasswordInputReg = ({ onPasswordChange }) => {
   const [password, setPassword] = useState('');
 
   const handlePasswordChange = (event) => {
@@ -19,11 +19,11 @@ const PasswordInput = ({ onPasswordChange }) => {
           data-testid="password-field"
           value={password}
           onChange={handlePasswordChange}
-          placeholder="Type your password..."
+          placeholder="Enter a password..."
         />
       </label>
     </div>
   );
 };
 
-export default PasswordInput;
+export default PasswordInputReg;
