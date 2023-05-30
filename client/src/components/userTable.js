@@ -3,7 +3,6 @@ import UserActionField from "./userActionField";
 
 export default function UserTable() {
   const [userlist, setUserlist] = useState([]);
-  const [showPopup, setShowPopup] = useState(false);
 
   const token = localStorage.getItem('token');
 
