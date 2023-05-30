@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import Layout from "./components/layout";
 import LoginPage from "./pages/loginPage"
 import GuestPage from './pages/guestPage';
 import RegisterPage from './pages/registerPage';
@@ -14,7 +13,7 @@ root.render(
   <React.StrictMode>
      <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/">
           <Route index element={<LoginPage />} />
           <Route path="GuestPage" element={<GuestPage />} />
           <Route path="RegisterPage" element={<RegisterPage />} />

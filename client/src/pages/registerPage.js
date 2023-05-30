@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginRegisterInput from '../components/loginRegisterInput';
 import { Link } from 'react-router-dom';
+import Headertab from '../components/headertab'
 
 function RegisterPage() {
   const [username, setUsername] = useState('');
@@ -51,23 +52,26 @@ function RegisterPage() {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <strong>Username</strong>
-          <LoginRegisterInput placeholder={"Type your username..."} onChange={handleUsernameChange} />
-        </div>
-        <div>
-          <strong>Password</strong>
-          <LoginRegisterInput placeholder={"Type your password..."} onChange={handlePasswordChange} />
-        </div>
-        <small>
-          Already have an account? Sign in <Link to="../">here!</Link>{' '}
-        </small>
-        <button type="submit">Register new account</button>
-      </form>
-    </div>
+    <>
+      <Headertab />
+      <main>
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <strong>Username</strong>
+            <LoginRegisterInput placeholder={"Type your username..."} onChange={handleUsernameChange} />
+          </div>
+          <div>
+            <strong>Password</strong>
+            <LoginRegisterInput placeholder={"Type your password..."} onChange={handlePasswordChange} />
+          </div>
+          <small>
+            Already have an account? Sign in <Link to="../">here!</Link>{' '}
+          </small>
+          <button type="submit">Register new account</button>
+        </form>
+      </main>
+    </>
   );
 }
 
