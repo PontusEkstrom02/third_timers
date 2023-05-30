@@ -16,7 +16,6 @@ export default function UserTable() {
     .then(response => response.json())
     .then(data => {
       setUserlist(data.users);
-      console.log(data.users);
     })
     .catch(error => {
       console.error(error);
