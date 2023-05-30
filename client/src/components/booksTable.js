@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import BooksActionField from "../components/bookActionField"
 export default function BooksTable({ search, role }) {
   const [booksList, setBooksList] = useState([]);
   useEffect(() => {
@@ -42,6 +42,7 @@ export default function BooksTable({ search, role }) {
             <th>Book title</th>
             <th>Book author</th>
             <th>Availability</th>
+            <th>Order</th>
           </tr>
         </thead>
         <tbody>
@@ -50,6 +51,7 @@ export default function BooksTable({ search, role }) {
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>{book.quantity > 0 ? book.quantity : "Out of stock"}</td>
+              <BooksActionField Bookquantity={book.quantity} Booktitle={book.title} newBooklist= {setBooksList}/>
             </tr>
           ))}
         </tbody>
@@ -64,6 +66,7 @@ export default function BooksTable({ search, role }) {
             <th>Book title</th>
             <th>Book author</th>
             <th>Availability</th>
+            <th>Order</th>
           </tr>
         </thead>
         <tbody>
@@ -72,6 +75,7 @@ export default function BooksTable({ search, role }) {
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>{book.quantity > 0 ? book.quantity : "Out of stock"}</td>
+              <BooksActionField Bookquantity={book.quantity} Booktitle={book.title} newBooklist= {setBooksList}/>
             </tr>
           ))}
         </tbody>

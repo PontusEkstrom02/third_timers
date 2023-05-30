@@ -19,7 +19,6 @@ function LoginPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Submitted:', username, password);
 
     // Prepare the data to be sent in the request body
     const userData = {
@@ -40,9 +39,11 @@ function LoginPage() {
         if (data.message === undefined) {
           alert("Failed to log in");
         } else {
+          localStorage.setItem('token', data.accessToken);
           alert(data.message);
           // Navigate to the login page
-          navigate('/UserPage');
+          console.log(data)
+          routing()
         }
       })
       .catch((error) => {
@@ -50,6 +51,30 @@ function LoginPage() {
         console.error(error);
       });
   };
+  // sends the user to the right page
+  const routing = () =>{
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:3001/library/profile', {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+        }
+    })
+     .then((response) => response.json())
+     .then((data) => {
+      if(data.user.role === "ADMIN"){
+        navigate("/AdminBookPage")
+      }
+      else{
+        navigate("/UserPage")
+      }
+     })
+     .catch((error) => {
+        // Handle any errors that occurred during the request
+        console.error(error);
+     });
+  }
 
   return (
     <div>

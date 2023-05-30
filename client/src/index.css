@@ -38,3 +38,9 @@ th {
 td {
   background-color: rgb(205, 235, 253);
 }
+.popup{
+  position: absolute;
+  top: 8vh;
+  left: 5vh;
+  background-color: gray;
+}
