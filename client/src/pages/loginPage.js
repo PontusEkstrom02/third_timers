@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import LoginBtn from '../components/loginBtn';
 import GuestBtn from '../components/guestUserBtn';
-import UsernameInput from '../components/usernameInput';
+import UsernameInput from '../components/loginRegisterInput';
 import PasswordInput from '../components/passwordInput';
+import { Link } from 'react-router-dom';
 
 function LoginPage() {
     const [username, setUsername] = useState('');
@@ -29,11 +30,12 @@ function LoginPage() {
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
             <div>
-            <UsernameInput onUsernameChange={handleUsernameChange} />
+              <UsernameInput onUsernameChange={handleUsernameChange} />
             </div>
             <div>
-            <PasswordInput onPasswordChange={handlePasswordChange} />
+              <PasswordInput onPasswordChange={handlePasswordChange} />
             </div>
+            <small>Already have an account? Sign up <Link to="/RegisterPage">here!</Link> </small>
             <LoginBtn onClick={LoginBtn}>Sign in</LoginBtn>
             <GuestBtn />
           </form>

@@ -1,42 +1,71 @@
-//This file will render a register user view with two input fields for username and password, and a button for register.
 import React, { useState } from 'react';
-import UsernameInput from '../components/usernameInput';
-import PasswordInputReg from '../components/passwordInputReg';
-import RegisterBtn from '../components/registerBtn';
+import LoginRegisterInput from '../components/loginRegisterInput';
+import { Link } from 'react-router-dom';
 
 function RegisterPage() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleUsernameChange = (event) => {
-        setUsername(event.target.value);
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Submitted:', username, password);
+
+    // Prepare the data to be sent in the request body
+    const userData = {
+      username: username,
+      password: password,
     };
 
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
+    // Make a POST request to the backend API
+    fetch('http://localhost:3001/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message > 0){
+          alert(data.message)
+        }
+        else{
+          alert("Username already in use")
+        }
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the request
+        console.error(error);
+      });
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Submitted:', username, password);
-
-    };
-
-    return (
+  return (
+    <div>
+      <h2>Register</h2>
+      <form onSubmit={handleSubmit}>
         <div>
-          <h2>Register</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-            <UsernameInput onUsernameChange={handleUsernameChange} />
-            </div>
-            <div>
-            <PasswordInputReg onPasswordChange={handlePasswordChange} />
-            </div>
-            <RegisterBtn onClick={RegisterBtn}>Register new account</RegisterBtn>
-          </form>
+          <strong>Username</strong>
+          <LoginRegisterInput placeholder={"Type your username..."} onChange={handleUsernameChange} />
         </div>
-      );
-};
+        <div>
+          <strong>Password</strong>
+          <LoginRegisterInput placeholder={"Type your password..."} onChange={handlePasswordChange} />
+        </div>
+        <small>
+          Already have an account? Sign in <Link to="../">here!</Link>{' '}
+        </small>
+        <button type="submit">Register new account</button>
+      </form>
+    </div>
+  );
+}
 
 export default RegisterPage;

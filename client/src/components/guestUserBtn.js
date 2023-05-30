@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const GuestBtn = () => {
   return (
     <>
-     <small>No account? Sign up <Link to="RegisterPage">here!</Link></small>
+    <Link to="/GuestPage">
+     <button>Proceed as guest user</button>
+    </Link>
     </>
   );
 };

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 export default function BooksTable({ search, role }) {
   const [booksList, setBooksList] = useState([]);
-  console.log(role)
   useEffect(() => {
     fetch(`http://localhost:3001/library/books/search?q=${search}`)
       .then(response => response.json())
