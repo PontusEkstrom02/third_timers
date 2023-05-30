@@ -40,6 +40,7 @@ function LoginPage() {
         if (data.message === undefined) {
           alert("Failed to log in");
         } else {
+          localStorage.setItem('token', data.accessToken);
           alert(data.message);
           // Navigate to the login page
           navigate('/UserPage');
