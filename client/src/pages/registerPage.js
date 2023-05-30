@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LoginRegisterInput from '../components/loginRegisterInput';
 import { Link } from 'react-router-dom';
 
 function RegisterPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -39,6 +41,7 @@ function RegisterPage() {
         }
         else{
           alert(data.message)
+          navigate('../');
         }
       })
       .catch((error) => {

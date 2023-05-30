@@ -1,5 +1,5 @@
-//This file will render a login view with two input fields for username and password, and two buttons for login and guest user view.
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import GuestBtn from '../components/guestUserBtn';
 import LoginRegisterInput from '../components/loginRegisterInput';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -36,11 +37,12 @@ function LoginPage() {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.message === undefined){
-          alert("Failed to log in")
-        }
-        else{
-          alert(data.message)
+        if (data.message === undefined) {
+          alert("Failed to log in");
+        } else {
+          alert(data.message);
+          // Navigate to the login page
+          navigate('/UserPage');
         }
       })
       .catch((error) => {
@@ -69,6 +71,7 @@ function LoginPage() {
       <GuestBtn />
     </div>
   );
-};
+}
 
 export default LoginPage;
+
