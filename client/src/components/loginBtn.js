@@ -1,12 +1,12 @@
 //a login button
 import React from "react";
 
-const LoginBtn = ({ onClick, children }) => {
+function LoginBtn({onClick}) {
   return (
-    <button onClick={onClick}>
-      {children}
+    <button onClick={onClick} type="submit" name="login">
+      Sign in
     </button>
   );
-};
+}
 
 export default LoginBtn;
