@@ -1,33 +1,58 @@
-//The admin view of the users table/info
-export default function userTable(){
-  //https://gyazo.com/40453cd4ddecbfacd3580206ece71f2e
-  fetch('http://localhost:3001/admin/users', {
-    method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-  })
-  .catch(error => {
-    // Hantera fel här
-    console.error(error);
-  });
+import React, { useState, useEffect } from "react";
+import UserActionField from "./userActionField";
 
-    return(
-      <table>
+export default function UserTable() {
+  const [userlist, setUserlist] = useState([]);
+
+  const token = localStorage.getItem('token');
+
+  useEffect(() => {
+    fetch('http://localhost:3001/admin/users', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then(response => response.json())
+    .then(data => {
+      setUserlist(data.users);
+      console.log(data.users);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }, []);
+
+  const calculateTotalPurchases = (purchases) => {
+    let total = 0;
+    if (Array.isArray(purchases)) {
+      purchases.forEach(purchase => {
+        total += purchase.quantity;
+      });
+    }
+    return total;
+  };
+
+  return (
+    <table>
+      <thead>
         <tr>
           <th>Username</th>
           <th>Role</th>
           <th>Purchases</th>
+          <th>Action</th>
         </tr>
-        <tr>
-          <td>testens von testare</td>
-          <td>TEST</td>
-          <td>3 purchases</td>
-        </tr>
-      </table>
-    )
+      </thead>
+      <tbody>
+        {userlist.map((user) => (
+          <tr key={user.id}>
+            <td>{user.username}</td>
+            <td>{user.role}</td>
+            <td>{calculateTotalPurchases(user.purchases) + " purcheses"}</td>
+            <UserActionField userId={user.username} setupdatedUserList={setUserlist}/>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
