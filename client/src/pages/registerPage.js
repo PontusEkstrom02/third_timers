@@ -34,11 +34,11 @@ function RegisterPage() {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.message > 0){
-          alert(data.message)
+        if (data.message === undefined){
+          alert("Username already in use")
         }
         else{
-          alert("Username already in use")
+          alert(data.message)
         }
       })
       .catch((error) => {

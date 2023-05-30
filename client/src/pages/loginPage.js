@@ -1,46 +1,74 @@
 //This file will render a login view with two input fields for username and password, and two buttons for login and guest user view.
 import React, { useState } from 'react';
-import LoginBtn from '../components/loginBtn';
 import GuestBtn from '../components/guestUserBtn';
-import UsernameInput from '../components/loginRegisterInput';
-import PasswordInput from '../components/passwordInput';
+import LoginRegisterInput from '../components/loginRegisterInput';
 import { Link } from 'react-router-dom';
 
 function LoginPage() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleUsernameChange = (event) => {
-        setUsername(event.target.value);
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Submitted:', username, password);
+
+    // Prepare the data to be sent in the request body
+    const userData = {
+      username: username,
+      password: password,
     };
 
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
+    // Make a POST request to the backend API
+    fetch('http://localhost:3001/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === undefined){
+          alert("Failed to log in")
+        }
+        else{
+          alert(data.message)
+        }
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the request
+        console.error(error);
+      });
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Submitted:', username, password);
-
-    };
-
-    return (
+  return (
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
         <div>
-          <h2>Login</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <UsernameInput onUsernameChange={handleUsernameChange} />
-            </div>
-            <div>
-              <PasswordInput onPasswordChange={handlePasswordChange} />
-            </div>
-            <small>Already have an account? Sign up <Link to="/RegisterPage">here!</Link> </small>
-            <LoginBtn onClick={LoginBtn}>Sign in</LoginBtn>
-            <GuestBtn />
-          </form>
+          <strong>Username</strong>
+          <LoginRegisterInput placeholder={"Type your username..."} onChange={handleUsernameChange} />
         </div>
-      );
+        <div>
+          <strong>Password</strong>
+          <LoginRegisterInput placeholder={"Type your password..."} onChange={handlePasswordChange} />
+        </div>
+        <small>
+          No account? Sign up <Link to="/RegisterPage">here!</Link>{' '}
+        </small>
+        <button type="submit">Sign in</button>
+      </form>
+      <GuestBtn />
+    </div>
+  );
 };
 
 export default LoginPage;
