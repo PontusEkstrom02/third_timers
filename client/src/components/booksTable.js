@@ -59,7 +59,7 @@ export default function BooksTable({ search, role }) {
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>{book.quantity > 0 ? book.quantity : "Out of stock"}</td>
-              <BooksActionField Bookquantity={book.quantity} Booktitle={book.title} newBooklist= {setBooksList}/>
+              <BooksOrderField Bookquantity={book.quantity} Booktitle={book.title} newBooklist= {setBooksList}/>
             </tr>
           ))}
         </tbody>
@@ -84,8 +84,8 @@ export default function BooksTable({ search, role }) {
               <td>{book.title}</td>
               <td>{book.author}</td>
               <td>{book.quantity > 0 ? book.quantity : "Out of stock"}</td>
-              <BooksActionField Bookquantity={book.quantity} Booktitle={book.title} newBooklist= {setBooksList}/>
-              <BooksOrderField />
+              <BooksOrderField Bookquantity={book.quantity} Booktitle={book.title} newBooklist= {setBooksList}/>
+              <BooksActionField />
             </tr>
           ))}
         </tbody>
