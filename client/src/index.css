@@ -38,7 +38,10 @@ th {
 td {
   background-color: rgb(205, 235, 253);
 }
-.popup{
+
+.popup,
+.addEditpopup
+{
   position: absolute;
   top: 8vh;
   left: 5vh;

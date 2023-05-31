@@ -2,12 +2,14 @@
 import React, { useState } from 'react';
 import AddNewBookBtn from '../components/addNewBookBtn';
 
+
 function AddEditPopup() {
+  const token = localStorage.getItem('token');
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [quantity, setQuantity] = useState('');
-
+  
   const openPopup = () => {
     setIsOpen(true);
   };
@@ -25,18 +27,60 @@ function AddEditPopup() {
   };
 
   const handleQuantityChange = (event) => {
-    setQuantity(event.target.value);
+    setQuantity(event.target.value);  
   };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Perform any necessary actions with the input values
-    console.log('Title:', title);
-    console.log('Author:', author);
-    console.log('Quantity:', quantity);
-    // Close the pop-up
-    closePopup();
-  };
- //</div>onClick={openPopup}>Add new book</button>
+
+ 
+
+const userData = {
+    title: title,
+    author: author,
+    quantity: quantity,
+};
+
+  const addNewBook = () => {
+    fetch('http://localhost:3001/admin/books', {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      closePopup();
+    })
+    .catch((error) => {
+        // Handle any errors that occurred during the request
+        console.error(error);
+    });
+    }
+
+  /*const deleteBook = () = {
+    fetch("http://localhost:3001/admin/books", {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setupdatedUserList(data.context.users);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+  
+
+
+
+  }  
+*/
+ 
   return (
     <div>
       <AddNewBookBtn onClick={openPopup}/>
@@ -44,13 +88,12 @@ function AddEditPopup() {
         <div className="addEditpopup">
           <div className="popup-content">
             <h2>{'<Add/Edit>'} book</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={addNewBook} >
               <div>
                 <label htmlFor="title">Title-{'<current title>'}</label>
                 <input
                   id="title"
                   placeholder='Insert new title...'
-                  value={title}
                   onChange={handleTitleChange}
                 />
               </div>
@@ -59,8 +102,8 @@ function AddEditPopup() {
                 <input
                   id="author"
                   placeholder='Insert new author...'
-                  value={author}
-                  onChange={handleAuthorChange}
+                 
+                  onChange={handleAuthorChange} 
                 />
               </div>
               <div>
@@ -68,7 +111,7 @@ function AddEditPopup() {
                 <input
                   id="quantity"
                   placeholder='Insert new quantity...'
-                  value={quantity}
+                  
                   onChange={handleQuantityChange}
                 />
               </div>
