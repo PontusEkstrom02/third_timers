@@ -1,3 +1,9 @@
+/*
+ * This file is a component that renders the user table for admins and the logic for the search function
+ * it also handels logic for how many purchases.
+ * the search functions has some flaws that you cant do any of the actions for the users when searching
+ * and a way to fix that is by having the back end make a search function for it
+*/
 import React, { useState, useEffect } from "react";
 import UserActionField from "./userActionField";
 
@@ -21,7 +27,7 @@ export default function UserTable({ search }) {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [token]);
 
   useEffect(() => {
     if (search.trim() === "") {

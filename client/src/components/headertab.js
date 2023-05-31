@@ -1,3 +1,9 @@
+/*
+ * This file is a component that handles and makes the different types of headers that the pages needs.
+ * Its a vary slopy but easy solution on how to return different headers but it works for now.
+ * the main way to fix the if statements and repitition is by having if statements inside the return.
+*/
+
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
