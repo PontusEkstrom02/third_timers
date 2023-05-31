@@ -6,7 +6,8 @@
  * that would return different tablers to different sites
 */
 import React, { useState, useEffect } from "react";
-import BooksActionField from "../components/bookActionField"
+import BooksActionField from "./bookOrderField"
+import BooksOrderField from "./bookActionField";
 export default function BooksTable({ search, role }) {
   const [booksList, setBooksList] = useState([]);
   useEffect(() => {
@@ -74,6 +75,7 @@ export default function BooksTable({ search, role }) {
             <th>Book author</th>
             <th>Availability</th>
             <th>Order</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -83,6 +85,7 @@ export default function BooksTable({ search, role }) {
               <td>{book.author}</td>
               <td>{book.quantity > 0 ? book.quantity : "Out of stock"}</td>
               <BooksActionField Bookquantity={book.quantity} Booktitle={book.title} newBooklist= {setBooksList}/>
+              <BooksOrderField />
             </tr>
           ))}
         </tbody>
