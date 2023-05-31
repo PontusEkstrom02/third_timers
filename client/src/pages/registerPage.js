@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginRegisterInput from '../components/loginRegisterInput';
 import { Link } from 'react-router-dom';
-import Headertab from '../components/headertab'
+import Headertab from '../components/headerTab'
 
 function RegisterPage() {
   const [username, setUsername] = useState('');

@@ -5,7 +5,7 @@ import BooksTableTab from "../components/booksTableTab"
 import UserTableTab from "../components/userTableTab"
 import AddNewBookBtn from '../components/addNewBookBtn';
 
-import Headertab from '../components/headertab'
+import Headertab from '../components/headerTab'
 function AdminBookPage() {
   const [search, setSearch] = useState('');
   const handleAddbtn = (event) => {
