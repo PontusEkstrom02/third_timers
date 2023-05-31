@@ -7,9 +7,7 @@ export default function BooksOrderField({Bookquantity, Booktitle, newBooklist}) 
     const [title, setTitle] = useState(Booktitle);
     const [quantity, setQuantity] = useState(0);
     const incrementQuantity = () => {
-        if (quantity !== Bookquantity){
-            setQuantity(quantity + 1);
-        }
+        setQuantity(quantity + 1);
     };
 
     const decrementQuantity = () => {
@@ -34,9 +32,14 @@ export default function BooksOrderField({Bookquantity, Booktitle, newBooklist}) 
         })
         .then((response) => response.json())
         .then((data) => {
-            setQuantity(0)
-            alert(data.message)
-            newBooklist(data.context.books)
+            if(data.error === "Not enough quantity"){
+                alert(data.error)
+            }
+            else{
+                setQuantity(0)
+                alert(data.message)
+                newBooklist(data.context.books)
+            }
         })
         .catch((error) => {
             // Handle any errors that occurred during the request
