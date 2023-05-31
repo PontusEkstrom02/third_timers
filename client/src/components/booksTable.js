@@ -6,8 +6,8 @@
  * that would return different tablers to different sites
 */
 import React, { useState, useEffect } from "react";
-import BooksActionField from "./bookOrderField"
-import BooksOrderField from "./bookActionField";
+import BooksActionField from "./bookActionField"
+import BooksOrderField from "./bookOrderField";
 export default function BooksTable({ search, role }) {
   const [booksList, setBooksList] = useState([]);
   useEffect(() => {
