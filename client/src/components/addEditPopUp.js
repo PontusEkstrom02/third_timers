@@ -1,5 +1,6 @@
 //admins add/edit popup window for books updates/addition.
 import React, { useState } from 'react';
+import AddNewBookBtn from '../components/addNewBookBtn';
 
 function AddEditPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,10 +36,10 @@ function AddEditPopup() {
     // Close the pop-up
     closePopup();
   };
-
+ //</div>onClick={openPopup}>Add new book</button>
   return (
     <div>
-      <button onClick={openPopup}>Add new book</button>
+      <AddNewBookBtn onClick={openPopup}/>
       {isOpen && (
         <div className="addEditpopup">
           <div className="popup-content">
@@ -47,21 +48,27 @@ function AddEditPopup() {
               <div>
                 <label htmlFor="title">Title-{'<current title>'}</label>
                 <input
+                  id="title"
                   placeholder='Insert new title...'
+                  value={title}
                   onChange={handleTitleChange}
                 />
               </div>
               <div>
                 <label htmlFor="author">Author-{'<current author>'}</label>
                 <input
-                  placeholder='Insert new author'
+                  id="author"
+                  placeholder='Insert new author...'
+                  value={author}
                   onChange={handleAuthorChange}
                 />
               </div>
               <div>
                 <label htmlFor="quantity">Quantity-{'<current quantity>'}</label>
                 <input
-                  placeholder='Insert new quantity'
+                  id="quantity"
+                  placeholder='Insert new quantity...'
+                  value={quantity}
                   onChange={handleQuantityChange}
                 />
               </div>
