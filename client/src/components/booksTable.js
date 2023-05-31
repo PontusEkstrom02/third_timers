@@ -1,3 +1,10 @@
+/*
+ * This file is a component that is used to render out a table of all the different books by feach and
+ * depending on what site it return different tables.
+ * The code is using ifs for the different returns and is making it more code then nesasary but works
+ * for now and the way to inprov it would be to have only one return that would have if statesment in it
+ * that would return different tablers to different sites
+*/
 import React, { useState, useEffect } from "react";
 import BooksActionField from "../components/bookActionField"
 export default function BooksTable({ search, role }) {

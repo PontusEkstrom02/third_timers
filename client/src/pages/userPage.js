@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import SearchBar from '../components/searchBar';
 import BooksTable from '../components/booksTable';
-import Headertab from '../components/headertab'
+import Headertab from '../components/headerTab'
 
 export default function UserPage() {
   const [search, setSearch] = useState('');
