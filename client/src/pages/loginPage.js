@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import GuestBtn from '../components/guestUserBtn';
 import LoginRegisterInput from '../components/loginRegisterInput';
 import { Link } from 'react-router-dom';
+import Headertab from '../components/headertab'
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -77,24 +78,28 @@ function LoginPage() {
   }
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <strong>Username</strong>
-          <LoginRegisterInput placeholder={"Type your username..."} onChange={handleUsernameChange} />
-        </div>
-        <div>
-          <strong>Password</strong>
-          <LoginRegisterInput placeholder={"Type your password..."} onChange={handlePasswordChange} />
-        </div>
-        <small>
-          No account? Sign up <Link to="/RegisterPage">here!</Link>{' '}
-        </small>
-        <button type="submit">Sign in</button>
-      </form>
-      <GuestBtn />
-    </div>
+    
+      <>
+      <Headertab />
+      <main>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <strong>Username</strong>
+            <LoginRegisterInput placeholder={"Type your username..."} onChange={handleUsernameChange} />
+          </div>
+          <div>
+            <strong>Password</strong>
+            <LoginRegisterInput placeholder={"Type your password..."} onChange={handlePasswordChange} />
+          </div>
+          <small>
+            No account? Sign up <Link to="/RegisterPage">here!</Link>{' '}
+          </small>
+          <button type="submit">Sign in</button>
+        </form>
+        <GuestBtn />
+      </main>
+    </>
   );
 }
 

@@ -31,7 +31,6 @@ export default function UserActionField({ userId, setupdatedUserList }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        alert(data.message);
         setupdatedUserList(data.context.users);
       })
       .catch((error) => {
@@ -50,7 +49,6 @@ export default function UserActionField({ userId, setupdatedUserList }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        alert(data.message);
         setupdatedUserList(data.context.users);
       })
       .catch((error) => {
