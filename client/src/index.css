@@ -47,3 +47,77 @@ td {
   left: 5vh;
   background-color: gray;
 }
+/* Login-page
+.centered-box {
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  height: 100vh;
+}
+
+  .login-box{
+  background-color: #a8a4a4;
+  padding: 4rem;
+  width: 35%; 
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.login-box h2 {
+  display: flex;
+  margin: 0; 
+  padding: 2rem; 
+  justify-content: center; 
+  background-color: #5a626b;
+  color: #fcfcfc;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+}
+
+.small-text {
+  margin-top: 1rem;
+  text-align: center; 
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; 
+}
+
+.sign-in-button,
+.guest-button {
+  padding: 0.5rem 1rem;
+  width: 15rem;
+  border: none;
+  background-color: #5a626b; 
+  color: #fff; 
+  border-radius: 0.25rem; 
+  cursor: pointer;
+}
+
+.sign-in-button {
+  margin-bottom: 1rem;
+}
+.guest-button {
+  background-color: rgb(191, 196, 191);
+  color: black;
+  margin-left: 13.3rem;
+}
+
+.header-box {
+  display: flex;
+  justify-content: center;
+  background-color: #407c51; 
+  width: 100%;
+  padding: 20px; 
+  box-sizing: border-box;
+} */
