@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 import GuestBtn from "../components/guestUserBtn";
 import LoginRegisterInput from "../components/loginRegisterInput";
 import { Link } from "react-router-dom";
-import Headertab from "../components/headertab";
-import "./loginPage.css";
-
+import Headertab from "../components/headerTab";
 import "../index.css";
 
 function LoginPage() {
@@ -82,39 +80,31 @@ function LoginPage() {
   return (
     <>
       <Headertab />
-
-      <main className="centered-box">
-        <div className="login-box">
-          <h2>Login</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <strong>Username</strong>
-              <LoginRegisterInput
-                placeholder={"Type your username..."}
-                onChange={handleUsernameChange}
-              />
-            </div>
-            <div className="form-group">
-              <strong>Password</strong>
-              <LoginRegisterInput
-                placeholder={"Type your password..."}
-                onChange={handlePasswordChange}
-              />
-            </div>
-
-            <div className="small-text">
-              <small>
-                No account? Sign up <Link to="/RegisterPage">here!</Link>{" "}
-              </small>
-            </div>
-            <div className="button-container">
-              <button type="submit" className="sign-in-button">
-                Sign in
-              </button>
-            </div>
-          </form>
+      <main className="login-container">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <div>
+            <strong>Username</strong>
+            <LoginRegisterInput
+              placeholder={"Type your username..."}
+              onChange={handleUsernameChange}
+            />
+          </div>
+          <div>
+            <strong>Password</strong>
+            <LoginRegisterInput
+              placeholder={"Type your password..."}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <small>
+            No account? Sign up <Link to="/RegisterPage">here!</Link>{" "}
+          </small>
+          <button className="signIn-btn" type="submit">
+            Sign in
+          </button>
           <GuestBtn />
-        </div>
+        </form>
       </main>
     </>
   );
