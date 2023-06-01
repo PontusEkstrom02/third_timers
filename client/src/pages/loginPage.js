@@ -4,7 +4,7 @@ import GuestBtn from "../components/guestUserBtn";
 import LoginRegisterInput from "../components/loginRegisterInput";
 import { Link } from "react-router-dom";
 import Headertab from "../components/headerTab";
-import "../index.css";
+import "./loginPage.css";
 
 function LoginPage() {
   const [username, setUsername] = useState("");

@@ -19,9 +19,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  margin-bottom: 1rem;
 }
 
-.signIn-btn{
+
+.signIn-btn, .guest-button{
   background-color: #439eaa;  
   border: none;
   color: white;

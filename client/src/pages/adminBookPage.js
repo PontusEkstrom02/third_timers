@@ -4,6 +4,7 @@ import SearchBar from "../components/searchBar";
 import BooksTableTab from "../components/booksTableTab";
 import UserTableTab from "../components/userTableTab";
 import AddEditPopup from "../components/addEditPopUp";
+import "./adminBookPage.css";
 
 import Headertab from "../components/headerTab";
 function AdminBookPage() {
