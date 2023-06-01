@@ -4,7 +4,7 @@ const GuestBtn = () => {
   return (
     <>
     <Link to="/GuestPage">
-      <button>Proceed as guest user</button>
+      <button className='guest-button'>Proceed as guest user</button>
     </Link>
     </>
   );
