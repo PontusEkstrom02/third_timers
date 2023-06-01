@@ -35,7 +35,7 @@ export default function Header({ role }) {
 
   if (role === "GUEST") {
     return (
-      <header>
+      <header className="header-box">
         <h1>Booksters website</h1>
         <div>
           <small>Browsing as guest...</small>
@@ -47,7 +47,7 @@ export default function Header({ role }) {
     );
   } else if (role === "USER") {
     return (
-      <header>
+      <header className="header-box">
         <h1>Booksters website</h1>
         <div>
           <small>Browsing as user {name}</small>
@@ -59,7 +59,7 @@ export default function Header({ role }) {
     );
   } else if (role === "ADMIN") {
     return (
-      <header>
+      <header className="header-box">
         <h1>Booksters website</h1>
         <div>
           <small>Browsing as admin {name}</small>
@@ -71,7 +71,7 @@ export default function Header({ role }) {
     );
   } else {
     return (
-      <header>
+      <header className="header-box">
         <h1>Booksters website</h1>
       </header>
     );

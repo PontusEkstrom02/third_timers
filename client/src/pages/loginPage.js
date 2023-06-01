@@ -4,6 +4,7 @@ import GuestBtn from '../components/guestUserBtn';
 import LoginRegisterInput from '../components/loginRegisterInput';
 import { Link } from 'react-router-dom';
 import Headertab from '../components/headerTab'
+import '../index.css';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -81,23 +82,29 @@ function LoginPage() {
     
       <>
       <Headertab />
-      <main>
+      <main className="centered-box">
+        <div className='login-box'>
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="form-group">
             <strong>Username</strong>
             <LoginRegisterInput placeholder={"Type your username..."} onChange={handleUsernameChange} />
           </div>
-          <div>
+          <div className= "form-group">
             <strong>Password</strong>
             <LoginRegisterInput placeholder={"Type your password..."} onChange={handlePasswordChange} />
           </div>
-          <small>
+          <div className="small-text">
+          <small >
             No account? Sign up <Link to="/RegisterPage">here!</Link>{' '}
           </small>
-          <button type="submit">Sign in</button>
+          </div>
+          <div className="button-container">
+          <button type="submit" className='sign-in-button'>Sign in</button>
+          </div>
         </form>
         <GuestBtn />
+        </div>
       </main>
     </>
   );
