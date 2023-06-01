@@ -7,10 +7,9 @@ function App() {
       <header>
         <h1>Booksters website</h1>
       </header>
-    
+
       <GuestPage />
     </>
-
   );
 }
 

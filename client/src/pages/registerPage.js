@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import LoginRegisterInput from '../components/loginRegisterInput';
-import { Link } from 'react-router-dom';
-import Headertab from '../components/headerTab'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import LoginRegisterInput from "../components/loginRegisterInput";
+import { Link } from "react-router-dom";
+import Headertab from "../components/headertab";
+import "./registerPage.css";
 
 function RegisterPage() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
@@ -19,7 +20,7 @@ function RegisterPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Submitted:', username, password);
+    console.log("Submitted:", username, password);
 
     // Prepare the data to be sent in the request body
     const userData = {
@@ -28,21 +29,20 @@ function RegisterPage() {
     };
 
     // Make a POST request to the backend API
-    fetch('http://localhost:3001/auth/register', {
-      method: 'POST',
+    fetch("http://localhost:3001/auth/register", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(userData),
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.message === undefined){
-          alert("Username already in use")
-        }
-        else{
-          alert(data.message)
-          navigate('../');
+        if (data.message === undefined) {
+          alert("Username already in use");
+        } else {
+          alert(data.message);
+          navigate("../");
         }
       })
       .catch((error) => {
@@ -54,21 +54,29 @@ function RegisterPage() {
   return (
     <>
       <Headertab />
-      <main>
+      <main className="Register-container">
         <h2>Register</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="register-form">
           <div>
             <strong>Username</strong>
-            <LoginRegisterInput placeholder={"Type your username..."} onChange={handleUsernameChange} />
+            <LoginRegisterInput
+              placeholder={"Type your username..."}
+              onChange={handleUsernameChange}
+            />
           </div>
           <div>
             <strong>Password</strong>
-            <LoginRegisterInput placeholder={"Type your password..."} onChange={handlePasswordChange} />
+            <LoginRegisterInput
+              placeholder={"Type your password..."}
+              onChange={handlePasswordChange}
+            />
           </div>
           <small>
-            Already have an account? Sign in <Link to="../">here!</Link>{' '}
+            Already have an account? Sign in <Link to="../">here!</Link>{" "}
           </small>
-          <button type="submit">Register new account</button>
+          <button className="register-btn" type="submit">
+            Register new account
+          </button>
         </form>
       </main>
     </>
