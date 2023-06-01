@@ -57,29 +57,7 @@ const userData = {
     });
     }
 
-  /*const deleteBook = () = {
-    fetch("http://localhost:3001/admin/books", {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setupdatedUserList(data.context.users);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
-  
 
-
-
-  }  
-*/
  
   return (
     <div>

@@ -1,12 +1,20 @@
+
+//realtidsuppdatering
+
+
 import React, { useState } from 'react';
 export default function BooksActionField({Bookquantity, Booktitle, BookAuthor}){
-    const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
   const [isOpen, setIsOpen] = useState(false);
   const [oldtitle, setOldtitle] = useState(Booktitle);
   const [title, setTitle] = useState(Booktitle);
   const [author, setAuthor] = useState(BookAuthor);
   const [quantity, setQuantity] = useState(Bookquantity);
   
+  const handleDeleteClick = () => {
+    deleteBook();
+  };
+
   const openPopup = () => {
     setIsOpen(true);
   };
@@ -27,7 +35,8 @@ export default function BooksActionField({Bookquantity, Booktitle, BookAuthor}){
     setQuantity(event.target.value);  
   };
 
- 
+
+const titleData = {title:Booktitle}
 
 const userData = {
     previous: {title: Booktitle},
@@ -51,12 +60,33 @@ const userData = {
         // Handle any errors that occurred during the request
         console.error(error);
     });
-    }
+  };
+
+    const deleteBook = () => {
+      fetch("http://localhost:3001/admin/books", {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(titleData),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data)
+            window.location.reload(true)
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      };
+
+  
     return(
         <>
             <td>
                 <button onClick={openPopup}>Edit</button>
-                <button>Delete</button>
+                <button onClick={handleDeleteClick}>Delete</button>
             </td>
             {isOpen && (
                 <div className="addEditpopup">
@@ -76,7 +106,6 @@ const userData = {
                         <input
                             id="author"
                             placeholder='Insert new author...'
-                            
                             onChange={handleAuthorChange} 
                         />
                         </div>
@@ -85,7 +114,6 @@ const userData = {
                         <input
                             id="quantity"
                             placeholder='Insert new quantity...'
-                            
                             onChange={handleQuantityChange}
                         />
                         </div>
@@ -99,4 +127,4 @@ const userData = {
             )}
         </>
     )
-}
+  }
