@@ -4,7 +4,7 @@ import GuestBtn from "../components/guestUserBtn";
 import LoginRegisterInput from "../components/loginRegisterInput";
 import { Link } from "react-router-dom";
 import Headertab from "../components/headertab";
-import "./loginPage.css";
+import "./loginRegisterPage.css";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -81,15 +81,15 @@ function LoginPage() {
       <main className="login-container">
         <h2>Login</h2>
         <form onSubmit={handleSubmit} className="login-form">
-          <div>
-            <strong>Username</strong>
+          <div className="login-div">
+            <strong className="login-div-text">Username</strong>
             <LoginRegisterInput
               placeholder={"Type your username..."}
               onChange={handleUsernameChange}
             />
           </div>
-          <div>
-            <strong>Password</strong>
+          <div className="login-div">
+            <strong className="login-div-text">Password</strong>
             <LoginRegisterInput
               placeholder={"Type your password..."}
               onChange={handlePasswordChange}

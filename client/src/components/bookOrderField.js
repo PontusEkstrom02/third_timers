@@ -1,5 +1,8 @@
-//The admins field to make changes to the books. One to edit that makes it possible to change the names and amount of the books and one to delete books.
-//a button to add a new book
+/*
+* This file is a component file for rendering an order column available on the user and administrator view. 
+* It contains increment and decrement buttons for deciding order quantity aswell as an order button for placing orders.
+*/
+
 import React, { useState } from "react";
 import "./addEditPopUp.css";
 import "./orderField.css"

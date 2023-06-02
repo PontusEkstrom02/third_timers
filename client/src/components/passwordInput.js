@@ -1,3 +1,7 @@
+
+/*
+* This file is a component file for rendering an inputfield located on the login page. 
+*/
 import React, { useState } from 'react';
 
 const PasswordInput = ({ onPasswordChange }) => {
