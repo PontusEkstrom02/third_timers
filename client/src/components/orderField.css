@@ -8,6 +8,7 @@ button, span{
   border: none;
   padding: 10px 10px;
   border-radius: 4px;
+  cursor: pointer;
   
 }
 .decrease-btn{
@@ -16,6 +17,7 @@ button, span{
   border: none;
   padding: 10px 10px;
   border-radius: 4px;
+  cursor: pointer;
   
 }
 .order-btn{
@@ -24,6 +26,7 @@ button, span{
   border: none;
   padding: 10px 10px;
   border-radius: 4px;
+  cursor: pointer;
 
 }
 .quantity-span{
