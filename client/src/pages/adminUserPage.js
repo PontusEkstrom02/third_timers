@@ -16,8 +16,8 @@ export default function AdminUserPage() {
           onChange={(event) => setSearch(event.target.value)}
         />
         <div className="buttons">
-          <BooksTableTab page="user"/>
-          <UserTableTab page="user"/>
+          <BooksTableTab />
+          <UserTableTab />
         </div>
         <UserTable search={search} />
       </main>
