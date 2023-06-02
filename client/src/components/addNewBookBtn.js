@@ -1,4 +1,7 @@
-//this button will render a pop up page where authorized user (admin) can add/edit title, author or quantity of books
+/*
+* This file is a component file for rendering a button that generates a popup window on which an administrator can add/edit title, author or quantity of books .
+*/
+
 
 
 function AddNewBookBtn({onClick}) {

@@ -1,6 +1,9 @@
-//admins add/edit popup window for books updates/addition.
-import React, { useState } from "react";
-import AddNewBookBtn from "../components/addNewBookBtn";
+/*
+* This file is a component file for rendering a popup window in which an administrator can add/edit title, author or quantity of books.
+*/
+
+import React, { useState } from 'react';
+import AddNewBookBtn from '../components/addNewBookBtn';
 import "./addEditPopUp.css";
 
 function AddEditPopup() {
