@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import BooksTable from "../components/booksTable";
 import SearchBar from "../components/searchBar";
-import BooksTableTab from "../components/booksTableTab";
-import UserTableTab from "../components/userTableTab";
+import BooksTableTab from "../components/BooksTableTab";
+import UserTableTab from "../components/UserTableTab";
 import AddEditPopup from "../components/addEditPopUp";
 import "./adminBookPage.css";
 
