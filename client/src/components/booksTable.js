@@ -60,7 +60,6 @@ export default function BooksTable({ search, role }) {
               <td>{book.author}</td>
               <td>{book.quantity > 0 ? book.quantity : "Out of stock"}</td>
               <BooksOrderField
-                Bookquantity={book.quantity}
                 Booktitle={book.title}
                 newBooklist={setBooksList}
               />
@@ -88,7 +87,6 @@ export default function BooksTable({ search, role }) {
               <td>{book.author}</td>
               <td>{book.quantity > 0 ? book.quantity : "Out of stock"}</td>
               <BooksOrderField
-                Bookquantity={book.quantity}
                 Booktitle={book.title}
                 newBooklist={setBooksList}
               />

@@ -1,7 +1,5 @@
 
 //realtidsuppdatering
-
-
 import React, { useState } from 'react';
 export default function BooksActionField({Bookquantity, Booktitle, BookAuthor}){
   const token = localStorage.getItem('token');
@@ -73,7 +71,6 @@ const userData = {
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log(data)
             window.location.reload(true)
           })
           .catch((error) => {
@@ -88,42 +85,44 @@ const userData = {
                 <button onClick={openPopup}>Edit</button>
                 <button onClick={handleDeleteClick}>Delete</button>
             </td>
+            {isOpen && (<div className="Gray"></div>)}
             {isOpen && (
-                <div className="addEditpopup">
-                    <div className="popup-content">
-                    <h2>{'Edit'} book</h2>
-                    <form onSubmit={addNewBook} >
-                        <div>
-                        <label htmlFor="title">Title-{Booktitle}</label>
-                        <input
-                            id="title"
-                            placeholder='Insert new title...'
-                            onChange={handleTitleChange}
-                        />
-                        </div>
-                        <div>
-                        <label htmlFor="author">Author-{BookAuthor}</label>
-                        <input
-                            id="author"
-                            placeholder='Insert new author...'
-                            onChange={handleAuthorChange} 
-                        />
-                        </div>
-                        <div>
-                        <label htmlFor="quantity">Quantity-{Bookquantity}</label>
-                        <input
-                            id="quantity"
-                            placeholder='Insert new quantity...'
-                            onChange={handleQuantityChange}
-                        />
-                        </div>
-                        <div>
-                        <button type="submit">Save changes</button>
-                        <button type="button" onClick={closePopup}>Discard changes</button>
-                        </div>
-                    </form>
-                    </div>
-                </div>
+              <div className="popup-content">
+                <h2>Edit book</h2>
+                <form onSubmit={addNewBook} className="form-popup">
+                  <div className="form-div">
+                    <label htmlFor="title">Title - {Booktitle}</label>
+                    <input
+                      className="form-input"
+                      id="title"
+                      placeholder="Insert new title..."
+                      onChange={handleTitleChange}
+                    />
+                  </div>
+                  <div className="form-div">
+                    <label htmlFor="author">Author - {BookAuthor}</label>
+                    <input
+                      className="form-input"
+                      id="author"
+                      placeholder="Insert new author..."
+                      onChange={handleAuthorChange}
+                    />
+                  </div>
+                  <div className="form-div">
+                    <label htmlFor="quantity">Quantity - {Bookquantity}</label>
+                    <input
+                      className="form-input"
+                      id="quantity"
+                      placeholder="Insert new quantity..."
+                      onChange={handleQuantityChange}
+                    />
+                  </div>
+                  <div>
+                    <button type="submit" className="form-button-save">Save changes</button>
+                    <button type="button" onClick={closePopup} className="form-button-discard">Discard changes</button>
+                  </div>
+                </form>
+              </div>
             )}
         </>
     )

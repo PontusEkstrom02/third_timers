@@ -1,8 +1,10 @@
 //The admins field to make changes to the books. One to edit that makes it possible to change the names and amount of the books and one to delete books.
 //a button to add a new book
-import React, { useState } from 'react';
 
-export default function BooksOrderField({Bookquantity, Booktitle, newBooklist}) {
+import React, { useState } from 'react';
+import "./addEditPopUp.css";
+
+export default function BooksOrderField({ Booktitle, newBooklist}) {
     const token = localStorage.getItem('token');
     const [title, setTitle] = useState(Booktitle);
     const [quantity, setQuantity] = useState(0);
@@ -37,7 +39,6 @@ export default function BooksOrderField({Bookquantity, Booktitle, newBooklist}) 
             }
             else{
                 setQuantity(0)
-                alert(data.message)
                 newBooklist(data.context.books)
             }
         })

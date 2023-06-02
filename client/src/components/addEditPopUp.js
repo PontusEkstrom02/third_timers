@@ -58,45 +58,44 @@ function AddEditPopup() {
   return (
     <div className="addEdit-container">
       <AddNewBookBtn onClick={openPopup} />
+      
+      {isOpen && (<div className="Gray"></div>)}
       {isOpen && (
-        <div className="addEditpopup">
-          <div className="popup-content">
-            <h2>{"<Add/Edit>"} book</h2>
-            <form onSubmit={addNewBook}>
-              <div>
-                <label htmlFor="title">Title-{"<current title>"}</label>
-                <input
-                  id="title"
-                  placeholder="Insert new title..."
-                  onChange={handleTitleChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="author">Author-{"<current author>"}</label>
-                <input
-                  id="author"
-                  placeholder="Insert new author..."
-                  onChange={handleAuthorChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="quantity">
-                  Quantity-{"<current quantity>"}
-                </label>
-                <input
-                  id="quantity"
-                  placeholder="Insert new quantity..."
-                  onChange={handleQuantityChange}
-                />
-              </div>
-              <div>
-                <button type="submit">Save changes</button>
-                <button type="button" onClick={closePopup}>
-                  Discard changes
-                </button>
-              </div>
-            </form>
-          </div>
+        <div className="popup-content">
+          <h2>Add book</h2>
+          <form onSubmit={addNewBook} className="form-popup">
+            <div className="form-div">
+              <label htmlFor="title">Title</label>
+              <input
+                className="form-input"
+                id="title"
+                placeholder="Insert new title..."
+                onChange={handleTitleChange}
+              />
+            </div>
+            <div className="form-div">
+              <label htmlFor="author">Author</label>
+              <input
+                className="form-input"
+                id="author"
+                placeholder="Insert new author..."
+                onChange={handleAuthorChange}
+              />
+            </div>
+            <div className="form-div">
+              <label htmlFor="quantity">Quantity</label>
+              <input
+                className="form-input"
+                id="quantity"
+                placeholder="Insert new quantity..."
+                onChange={handleQuantityChange}
+              />
+            </div>
+            <div>
+              <button type="submit" className="form-button-save">Save changes</button>
+              <button type="button" onClick={closePopup} className="form-button-discard">Discard changes</button>
+            </div>
+          </form>
         </div>
       )}
     </div>

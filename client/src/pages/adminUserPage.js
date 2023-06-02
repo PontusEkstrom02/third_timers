@@ -3,7 +3,7 @@ import BooksTableTab from "../components/booksTableTab"
 import UserTableTab from "../components/userTableTab"
 import UserTable from "../components/userTable"
 import SearchBar from "../components/searchBar"
-import Headertab from '../components/headerTab'
+import Headertab from '../components/headertab'
 export default function AdminUserPage() {
     const [search, setSearch] = useState('');
 
