@@ -2,9 +2,7 @@
 
 
 .tab-links{
-  
   font-size:1.5em;
-
 }
 .SignIn-btn{
 background-color: #41a1ae;
@@ -22,13 +20,9 @@ border-radius: 5px;
   display: flex;
   justify-content: flex-end;
   margin-right: 10.5rem;
-
 }
 
 .add-new-book-btn {
-  position: absolute;
-  top: 21vh;
-  left: 65vh;
   background-color: hsl(184, 51%, 36%);
   border: none;
   color: white;
