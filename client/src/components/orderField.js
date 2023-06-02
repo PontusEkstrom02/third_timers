@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./orderField.css";
 
 function OrderField() {
   const [order, setOrder] = useState(0);
@@ -24,7 +25,7 @@ function OrderField() {
             <button className="incrementBook" onClick={incrementOrder}>
               +
             </button>
-            <p>{order}</p>
+            <p className="order-digit">{order}</p>
             <button className="decrementBook" onClick={decrementOrder}>
               -
             </button>

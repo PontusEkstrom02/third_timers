@@ -30,10 +30,13 @@ button, span{
 
 }
 .quantity-span{
-  font-weight: 500;
+  font-weight: 400;
   align-items: center;
   text-align: center;
   margin: 0 auto;
   font-size: 35px;
   
+}
+.order-digit{
+  background-color: red;
 }
