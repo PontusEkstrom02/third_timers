@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Headertab from "../components/headerTab";
 import "./loginPage.css";
 
-import "../index.css";
+//import "../index.css";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
