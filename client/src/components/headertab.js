@@ -49,7 +49,8 @@ export default function Header({ role }) {
     return (
       <header className="header-box">
         <h1>Booksters website</h1>
-        <div>
+
+        <div className="link-tabs">
           <small>Browsing as user {name}</small>
           <Link to="../">
             <button onClick={handleLogout}>Sign out</button>
@@ -61,10 +62,12 @@ export default function Header({ role }) {
     return (
       <header className="header-box">
         <h1>Booksters website</h1>
-        <div>
+        <div className="tab-links">
           <small>Browsing as admin {name}</small>
           <Link to="../">
-            <button onClick={handleLogout}>Sign out</button>
+            <button className="SignIn-btn" onClick={handleLogout}>
+              Sign out
+            </button>
           </Link>
         </div>
       </header>

@@ -1,0 +1,11 @@
+
+.popup-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  margin: 0 auto;
+  padding: 4em 0;
+  width: 30%
+
+}
