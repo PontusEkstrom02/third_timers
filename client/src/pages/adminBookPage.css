@@ -15,12 +15,12 @@ text-align: center;
 text-decoration: none;
 font-size: 16px;
 cursor: pointer;
-border-radius: 10px;
+border-radius: 5px;
 
 }
 .buttons{
   display: flex;
   justify-content: flex-end;
-  margin-right: 13rem;
+  margin-right: 10.5rem;
 
 }
