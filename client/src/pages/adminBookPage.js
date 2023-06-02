@@ -20,8 +20,8 @@ function AdminBookPage() {
         />
         <AddEditPopup />
         <div className="buttons">
-          <BooksTableTab page="book"/>
-          <UserTableTab page="book"/>
+          <BooksTableTab />
+          <UserTableTab />
         </div>
 
         <BooksTable search={search} role="admin" />
