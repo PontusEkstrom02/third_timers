@@ -1,4 +1,7 @@
-//A button to log in as a guest
+/*
+* This file is a component file for rendering a button on the login page on which one can choose to browse as unauthorized user or guest. 
+*/
+
 import { Link } from "react-router-dom";
 const GuestBtn = () => {
   return (

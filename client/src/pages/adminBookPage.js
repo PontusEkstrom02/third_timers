@@ -19,8 +19,11 @@ function AdminBookPage() {
           onChange={(event) => setSearch(event.target.value)}
         />
         <AddEditPopup />
-        <BooksTableTab />
-        <UserTableTab />
+        <div className="buttons">
+          <BooksTableTab />
+          <UserTableTab />
+        </div>
+
         <BooksTable search={search} role="admin" />
       </main>
     </>

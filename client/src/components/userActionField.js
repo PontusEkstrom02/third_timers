@@ -1,8 +1,8 @@
 /*
- * This file is a component is used for rendering and handeling the users settings logic and rendering.
- * the code is mostly good but needs a better way to render the popup as now it needs position absolut
- * to be able to render outside the action field in the table so just having the logic on another componen
- * or to have it in the userTable would allow for better handeling of the popup
+ * This file is a component file which is used for rendering and handling users settings logic.
+ * The code can be improved by using, a method currently unknown to better position the pop up window as it now needs position absolute.
+ * Another way of improvement would be to move the logic of the pop up screen to a separate component. 
+ * That would likely allow better control of handling where of the page the pop ur renders. 
 */
 import React, { useState } from "react";
 

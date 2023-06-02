@@ -1,7 +1,7 @@
 /*
- * This file is a component that handles and makes the different types of headers that the pages needs.
- * Its a somewhat sloppy solution for how to return different headers. It has a lot of room for improvement but it works for now.
- * The main way to fix the if statements and repitition is by having if statements inside the return.
+ * This file is a component file that renders and handles the different types of headers of each view or page.
+ * Its a somewhat sloppy solution for and has a lot of room for improvement.
+ * One way of improvement can be to fix the if statements and the repetition by having if statements inside the return.
 */
 
 import { Link } from "react-router-dom";

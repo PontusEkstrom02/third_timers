@@ -1,9 +1,9 @@
 /*
- * This file is a component that is used to render out a table of all the different books by feach and
- * depending on what site it return different tables.
- * The code is using ifs for the different returns and is making it more code then nesasary but works
- * for now and the way to inprov it would be to have only one return that would have if statesment in it
- * that would return different tablers to different sites
+ * This file is a component file for rendering a table of all the different books using the fetch method and
+ * depending on the URL it returns different tables.
+ * The code is using if statements for the different returns which requires makes the file long with alot of lines of code. 
+ * One way of improvement would be to have only one return with if statements in it,
+ * that would return different tables for different URLs.
  */
 import React, { useState, useEffect } from "react";
 import BooksActionField from "./bookActionField";

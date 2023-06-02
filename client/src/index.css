@@ -20,12 +20,13 @@ code {
 
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 85%;
+  margin: 0 auto;
 }
 
 th,
 td {
-  border: 1px solid #ffffff;
+  border: 1px solid #989494;
   text-align: left;
   padding: 8px;
   font-size: 32px;
