@@ -1,0 +1,27 @@
+/* *{
+  /* .decrease-btn {
+      background-color: #49a9b6;
+      color: #fff;
+      border: none;
+      padding: 10px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+  
+    } */
+/* } */ 
+.Edit-btn{
+  background-color: #49a9b6;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.Delete-btn{
+  background-color: #49a9b6;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}

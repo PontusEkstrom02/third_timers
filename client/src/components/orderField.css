@@ -1,0 +1,39 @@
+button, span{
+  margin: 0 auto;
+  margin: 10px;
+}
+.increase-btn{
+  background-color: #49a9b6;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+.decrease-btn{
+  background-color: #49a9b6;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+.order-btn{
+  background-color: #49a9b6;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+.quantity-span{
+  font-weight: 500;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 35px;
+  
+}

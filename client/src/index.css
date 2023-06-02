@@ -41,6 +41,14 @@ td {
   border: 4px solid hsl(0, 0%, 90%);
 }
 
+/* .popup,
+.addEditpopup
+{
+  position: absolute;
+  top: 8vh;
+  left: 5vh;
+  background-color: gray;
+} */
 /* Login-page
 .centered-box {
   display: flex;  
