@@ -30,3 +30,9 @@ margin: 10px;
 display: flex;
 justify-content: flex-end;
 }
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 13rem;
+
+}
