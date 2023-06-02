@@ -1,7 +1,8 @@
 //The admins field to make changes to the books. One to edit that makes it possible to change the names and amount of the books and one to delete books.
 //a button to add a new book
 import React, { useState } from "react";
-import "./orderField.css";
+import "./addEditPopUp.css";
+import "./orderField.css"
 
 export default function BooksOrderField({
   Bookquantity,

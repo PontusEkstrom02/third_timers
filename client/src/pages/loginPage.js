@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import GuestBtn from "../components/guestUserBtn";
 import LoginRegisterInput from "../components/loginRegisterInput";
 import { Link } from "react-router-dom";
-import Headertab from "../components/headerTab";
+import Headertab from "../components/headertab";
 import "./loginPage.css";
 
 function LoginPage() {
@@ -42,9 +42,7 @@ function LoginPage() {
           alert("Failed to log in");
         } else {
           localStorage.setItem("token", data.accessToken);
-          alert(data.message);
           // Navigate to the login page
-          console.log(data);
           routing();
         }
       })

@@ -6,7 +6,7 @@ import UserTableTab from "../components/userTableTab";
 import AddEditPopup from "../components/addEditPopUp";
 import "./adminBookPage.css";
 
-import Headertab from "../components/headerTab";
+import Headertab from "../components/headertab";
 function AdminBookPage() {
   const [search, setSearch] = useState("");
 
