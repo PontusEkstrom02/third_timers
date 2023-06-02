@@ -1,14 +1,6 @@
 
 /*Admin book page */
 
-h1{
-  text-align: center;
-  background-color: rgb(176, 176, 176);
-  font-weight: 600;
-  padding: 40px 0 0 0;
-  margin: -10px 0 0 0;
-  
-}
 
 .tab-links{
   
@@ -22,13 +14,10 @@ color: white;
 padding: 5px 20px;
 text-align: center;
 text-decoration: none;
-display: inline-block;
 font-size: 16px;
 cursor: pointer;
 border-radius: 10px;
-margin: 10px;
-display: flex;
-justify-content: flex-end;
+
 }
 .buttons{
   display: flex;
