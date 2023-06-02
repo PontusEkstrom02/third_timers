@@ -7,7 +7,7 @@
 function AddNewBookBtn({onClick}) {
  
   return (
-    <button onClick={onClick}>Add new book</button>
+    <button className="add-new-book-btn" onClick={onClick}>Add new book</button>
   );
 }
 

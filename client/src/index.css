@@ -18,6 +18,11 @@ code {
   padding: 1rem;
 }
 
+.input-field {
+  padding: 1.5rem 6rem;
+  margin: 5rem 9rem -2rem;
+}
+
 table {
   border-collapse: collapse;
   width: 85%;
