@@ -16,7 +16,7 @@ h1{
 
 }
 .SignIn-btn{
-background-color: #4fb9c7;
+background-color: #41a1ae;
 border: none;
 color: white;
 padding: 5px 20px;
@@ -29,4 +29,10 @@ border-radius: 10px;
 margin: 10px;
 display: flex;
 justify-content: flex-end;
+}
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 13rem;
+
 }

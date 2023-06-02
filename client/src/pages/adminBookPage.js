@@ -6,7 +6,7 @@ import UserTableTab from "../components/userTableTab";
 import AddEditPopup from "../components/addEditPopUp";
 import "./adminBookPage.css";
 
-import Headertab from "../components/headerTab";
+import Headertab from "../components/headertab";
 function AdminBookPage() {
   const [search, setSearch] = useState("");
 
@@ -19,8 +19,11 @@ function AdminBookPage() {
           onChange={(event) => setSearch(event.target.value)}
         />
         <AddEditPopup />
-        <BooksTableTab />
-        <UserTableTab />
+        <div className="buttons">
+          <BooksTableTab />
+          <UserTableTab />
+        </div>
+
         <BooksTable search={search} role="admin" />
       </main>
     </>

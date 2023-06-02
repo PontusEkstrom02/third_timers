@@ -2,23 +2,21 @@
 import React, { useState } from 'react';
 import SearchBar from '../components/searchBar';
 import BooksTable from '../components/booksTable';
-import Headertab from '../components/headerTab'
+import Headertab from '../components/headertab'
 
 export default function UserPage() {
-  const [search, setSearch] = useState('');
-  
-  
+  const [search, setSearch] = useState("");
+
   return (
     <>
-      <Headertab role="USER"/>
+      <Headertab role="USER" />
       <main>
         <SearchBar
           placeholder="Search query..."
-          onChange={event => setSearch(event.target.value)}
+          onChange={(event) => setSearch(event.target.value)}
         />
-        <BooksTable search={search} role="user"/>
+        <BooksTable search={search} role="user" />
       </main>
     </>
   );
 }
-
