@@ -1,7 +1,7 @@
 /*
  * This file is a component is used for rendering and handeling the users settings logic and rendering.
  * the code is mostly good but needs a better way to render the popup as now it needs position absolut
- * to be able to render outside the action field in the table so just having the logic on a nother componen
+ * to be able to render outside the action field in the table so just having the logic on another componen
  * or to have it in the userTable would allow for better handeling of the popup
 */
 import React, { useState } from "react";

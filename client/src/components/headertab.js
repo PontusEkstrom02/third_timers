@@ -35,37 +35,40 @@ export default function Header({ role }) {
 
   if (role === "GUEST") {
     return (
-      <header className="header-box">
+      <header className="header-field">
+      <div className="dummy-div"></div>
         <h1>Booksters website</h1>
-        <div>
+        <div className="link-tabs">
           <small>Browsing as guest...</small>
           <Link to="../">
-            <button>Sign in</button>
+            <button className="header-btn">Sign in</button>
           </Link>
         </div>
       </header>
     );
   } else if (role === "USER") {
     return (
-      <header className="header-box">
+      <header className="header-field">
+      <div className="dummy-div"></div>
         <h1>Booksters website</h1>
 
         <div className="link-tabs">
           <small>Browsing as user {name}</small>
           <Link to="../">
-            <button onClick={handleLogout}>Sign out</button>
+            <button className="header-btn" onClick={handleLogout}>Sign out</button>
           </Link>
         </div>
       </header>
     );
   } else if (role === "ADMIN") {
     return (
-      <header className="header-box">
+      <header className="header-field">
+      <div className="dummy-div"></div>
         <h1>Booksters website</h1>
-        <div className="tab-links">
+        <div className="link-tabs">
           <small>Browsing as admin {name}</small>
           <Link to="../">
-            <button className="SignIn-btn" onClick={handleLogout}>
+            <button className="header-btn" onClick={handleLogout}>
               Sign out
             </button>
           </Link>
@@ -74,7 +77,7 @@ export default function Header({ role }) {
     );
   } else {
     return (
-      <header className="header-box">
+      <header className="header-field-login">
         <h1>Booksters website</h1>
       </header>
     );
