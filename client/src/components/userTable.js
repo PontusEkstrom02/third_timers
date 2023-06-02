@@ -1,8 +1,8 @@
 /*
- * This file is a component that renders the user table for admins and the logic for the search function
- * it also handels logic for how many purchases.
- * the search functions has some flaws that you cant do any of the actions for the users when searching
- * and a way to fix that is by having the back end make a search function for it
+ * This file is a component file that renders the user table for administrators, aswell as the logic for the search function.
+ * The file also handles logic for making purchases.
+ * One flaw that the search function has is that one can't do any of the actions for the users when searching.
+ * A way to fix that is by having the back end make a search function.
 */
 import React, { useState, useEffect } from "react";
 import UserActionField from "./userActionField";

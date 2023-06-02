@@ -1,5 +1,9 @@
+/*
+* This file is a component file for rendering the action column on the administrator view. It contains an edit button that generates a popup window on which an administrator can add/edit title, author or quantity of books. 
+* It also contains a delete button which deletes desired title and renders an updatet list of books. There is room for improvement specifically regarding the location reload method where better 
+* methods for real time updates can be implemented.
+*/
 
-//realtidsuppdatering
 
 
 import React, { useState } from 'react';
