@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import LoginRegisterInput from "../components/loginRegisterInput";
 import { Link } from "react-router-dom";
 import Headertab from "../components/headertab";
-import "./registerPage.css";
+import "./loginRegisterPage.css";
 
 function RegisterPage() {
   const [username, setUsername] = useState("");
@@ -57,14 +57,14 @@ function RegisterPage() {
       <main className="Register-container">
         <h2>Register</h2>
         <form onSubmit={handleSubmit} className="register-form">
-          <div>
-            <strong>Username</strong>
+          <div className="register-div">
+            <strong className="register-div-text">Username</strong>
             <LoginRegisterInput
               placeholder={"Type your username..."}
               onChange={handleUsernameChange}
             />
           </div>
-          <div>
+          <div className="register-div">
             <strong>Password</strong>
             <LoginRegisterInput
               placeholder={"Type your password..."}
