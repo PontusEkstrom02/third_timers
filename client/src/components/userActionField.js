@@ -75,7 +75,7 @@ export default function UserActionField({ userId, setupdatedUserList }) {
     <td>
       <button onClick={handlePromoteClick} className="Edit-btn">Promote</button>
       <button onClick={handleDeleteClick} className="Delete-btn">Delete</button>
-
+      {showConfirmPopup && (<div class="Gray"></div>)}
       {showConfirmPopup && (
           <div className="popup-content-user">
             <h3>Change user setting</h3>
