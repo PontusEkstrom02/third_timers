@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import BooksTableTab from "../components/booksTableTab"
-import UserTableTab from "../components/userTableTab"
+import BooksTableTab from "../components/BooksTableTab"
+import UserTableTab from "../components/UserTableTab"
 import UserTable from "../components/userTable"
 import SearchBar from "../components/searchBar"
 import Headertab from '../components/headertab'
