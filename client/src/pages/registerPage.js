@@ -74,9 +74,9 @@ function RegisterPage() {
           <small>
             Already have an account? Sign in <Link to="../">here!</Link>{" "}
           </small>
-          <button className="register-btn" type="submit">
-            Register new account
-          </button>
+            <button className="register-btn" type="submit">
+              Register new account
+            </button>
         </form>
       </main>
     </>
