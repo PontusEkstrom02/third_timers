@@ -8,9 +8,9 @@
   justify-content: center;
   align-items: center;
   background-color: #439eaa;
-  height: 35vh;
-  width: 30%;
-  left: 37%;
+  height: 30em;
+  width: 45em;
+  left: 30%;
   z-index: 2;
   border-color: black;
   border-style: solid;
@@ -23,17 +23,18 @@
 .form-input{
   width: 300px;
   height: 40px;
-  padding-left: 20px;
+  padding-left: 50px;
 }
 .form-button-save, .form-button-discard{
   background-color: rgb(222, 222, 222);
-  width: 9.5vh;
+ 
   font-size: medium;
   color: black;
-  margin: 30px 15px 30px 0px;
+  margin: 30px 15px 35px 0px;
   border: none;
-  padding: 9px;
+  padding: 1rem 2rem;
   border-radius: 7px;
+  align-items: center;
 }
 .form-button-save{
   background-color: rgb(81, 81, 81);

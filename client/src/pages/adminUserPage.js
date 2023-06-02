@@ -15,8 +15,10 @@ export default function AdminUserPage() {
           placeholder="Search by username..."
           onChange={(event) => setSearch(event.target.value)}
         />
-        <BooksTableTab />
-        <UserTableTab />
+        <div className="buttons">
+          <BooksTableTab />
+          <UserTableTab />
+        </div>
         <UserTable search={search} />
       </main>
     </>
