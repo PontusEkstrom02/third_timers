@@ -1,14 +1,10 @@
 .Book-btn{
-
-
   background-color: hsl(185, 51%, 25%);
   border: none;
   color: white;
-  padding: 20px 40px;
+  padding: 20px 50px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 5px;
-
 }

@@ -32,9 +32,8 @@ table {
 th,
 td {
   border: 1px solid #989494;
-  text-align: left;
   padding: 8px;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 th {
@@ -45,6 +44,7 @@ th {
 td {
   background-color: hsl(0, 0%, 100%);
   border: 4px solid hsl(0, 0%, 90%);
+  font-size: 27px;
 }
 .header-field{
   background-color: #439eaa;
@@ -78,5 +78,6 @@ td {
   justify-content: center;
 }
 h1{
+  color: white;
   font-weight: 700;
 }

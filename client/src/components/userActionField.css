@@ -1,0 +1,49 @@
+
+
+.popup-content-user{
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #439eaa;
+    height: 20vh;
+    width: 20%;
+    left: 37%;
+    z-index: 2;
+    border-color: black;
+    border-style: solid;
+    border: 10px;
+}
+.Proceed-btn, .cancel-btn{
+    background-color: rgb(222, 222, 222);
+    font-size: medium;
+    border: none;
+    width: 20em;
+    height: 3em;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.Proceed-btn{
+    background-color: rgb(81, 81, 81);
+    color: white;
+}
+.Edit-btn{
+    background-color: #49a9b6;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.Delete-btn{
+    background-color: #707d7e;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}

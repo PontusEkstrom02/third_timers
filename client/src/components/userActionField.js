@@ -5,7 +5,7 @@
  * That would likely allow better control of handling where of the page the pop ur renders. 
 */
 import React, { useState } from "react";
-
+import "./userActionField.css"
 export default function UserActionField({ userId, setupdatedUserList }) {
   const token = localStorage.getItem("token");
   const [username, setUsername] = useState(userId);
@@ -73,18 +73,16 @@ export default function UserActionField({ userId, setupdatedUserList }) {
 
   return (
     <td>
-      <button onClick={handlePromoteClick}>Promote</button>
-      <button onClick={handleDeleteClick}>Delete</button>
+      <button onClick={handlePromoteClick} className="Edit-btn">Promote</button>
+      <button onClick={handleDeleteClick} className="Delete-btn">Delete</button>
 
       {showConfirmPopup && (
-        <div className="popup">
-          <div className="popup-content">
+          <div className="popup-content-user">
             <h3>Change user setting</h3>
             <p>Are you sure you wish to {actionType} user {userId}?</p>
-            <button onClick={handleActionConfirmation}>Proceed</button>
-            <button onClick={() => setShowConfirmPopup(false)}>Cancel</button>
+            <button onClick={handleActionConfirmation} className="Proceed-btn">Proceed</button>
+            <button onClick={() => setShowConfirmPopup(false)} className="cancel-btn">Cancel</button>
           </div>
-        </div>
       )}
     </td>
   );
